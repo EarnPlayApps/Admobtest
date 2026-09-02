@@ -1,12 +1,30 @@
 package com.admobtest
 
 import android.os.Bundle
+import android.webkit.CookieManager
+import android.webkit.WebView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val webView = findViewById<WebView>(R.id.webView)
+
+        webView.settings.javaScriptEnabled = true
+        webView.settings.domStorageEnabled = true
+        CookieManager.getInstance().setAcceptThirdPartyCookies(webView, true)
+
+        webView.loadUrl("file:///android_asset/index.html")
+
+        MobileAds.initialize(this) {}
+
+        val adView = findViewById<AdView>(R.id.adView)
+        adView.loadAd(AdRequest.Builder().build())
     }
 }
