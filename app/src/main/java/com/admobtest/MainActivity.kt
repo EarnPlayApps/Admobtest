@@ -1,27 +1,19 @@
 package com.admobtest
 
 import android.os.Bundle
-import android.webkit.CookieManager
-import android.webkit.WebView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdView
-import com.google.android.gms.ads.MobileAds
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        val webView = findViewById<WebView>(R.id.webView)
+        val text = TextView(this)
+        text.text = "APK BERJAYA DIBUKA"
+        text.textSize = 24f
+        text.setPadding(40, 100, 40, 40)
 
-        webView.settings.javaScriptEnabled = true
-        webView.settings.domStorageEnabled = true
-        CookieManager.getInstance().setAcceptThirdPartyCookies(webView, true)
-
-        webView.loadUrl("file:///android_asset/index.html")
-
-
+        setContentView(text)
     }
 }
