@@ -22,9 +22,6 @@ class MainActivity : AppCompatActivity() {
 
         webView.loadUrl("file:///android_asset/index.html")
 
-        MobileAds.initialize(this) {}
 
-        val adView = findViewById<AdView>(R.id.adView)
-        adView.loadAd(AdRequest.Builder().build())
     }
 }
