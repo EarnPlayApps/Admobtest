@@ -17,6 +17,6 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-3940256099942544/9214589741" />
+        ads:adUnitId="ca-app-pub-1349855536683235/9698485448" />
 
 </LinearLayout>
